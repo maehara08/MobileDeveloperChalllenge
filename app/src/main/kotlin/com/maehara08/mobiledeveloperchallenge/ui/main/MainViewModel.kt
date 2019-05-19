@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.maehara08.mobiledeveloperchallenge.reposiotry.CurrencyListRepository
-import com.maehara08.mobiledeveloperchallenge.reposiotry.local.Currency
+import com.maehara08.mobiledeveloperchallenge.reposiotry.local.model.Currency
 import kotlinx.coroutines.launch
 import timber.log.Timber
 

@@ -2,7 +2,7 @@ package com.maehara08.mobiledeveloperchallenge.reposiotry
 
 import android.app.Application
 import com.maehara08.mobiledeveloperchallenge.BuildConfig
-import com.maehara08.mobiledeveloperchallenge.reposiotry.local.Currency
+import com.maehara08.mobiledeveloperchallenge.reposiotry.local.model.Currency
 import com.maehara08.mobiledeveloperchallenge.reposiotry.remote.service.CurrencyListService
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred
