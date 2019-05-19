@@ -41,6 +41,8 @@ def lifecycle_version = "2.0.0"
 def okhttpVersion = '3.12.1'
 // Retrofit
 def retrofitVersion = '2.5.0'
+// Room
+def roomVersion = "2.1.0-alpha06"
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -74,6 +76,10 @@ dependencies {
   implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
   implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
   implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+  // room
+  implementation "androidx.room:room-runtime:$roomVersion"
+  kapt "androidx.room:room-compiler:$roomVersion"
+  kapt "androidx.room:room-ktx:$roomVersion"
   // log
   implementation 'com.jakewharton.timber:timber:4.7.1'
 
