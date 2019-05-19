@@ -12,6 +12,7 @@ https://github.com/square/java-code-styles
 * Android architecture components
     * Room
     * View Model
+    * Live Data
 
 ## TO Build
 Please replace `Access Token` in `gradle.properties`
