@@ -24,17 +24,17 @@ object UpdatedAtPreference : Preference {
       }
     }
 
-  var currencyRate: Date?
-    get() {
-      val time = sharedPreferences.getLong(Key.CURRENCY_RATE, DEFAULT_INT)
-      if (time == DEFAULT_INT) return null
-      return Date(time)
+  fun currencyRate(source: String): Date? {
+    val date = Date()
+    val time = sharedPreferences.getLong(Key.CURRENCY_RATE + source, DEFAULT_INT)
+    sharedPreferences.edit {
+      putLong(Key.CURRENCY_LIST, date.time)
     }
-    set(value) {
-      sharedPreferences.edit {
-        putLong(Key.CURRENCY_RATE, value?.time ?: DEFAULT_INT)
-      }
+    if (time == DEFAULT_INT) {
+      return null
     }
+    return date
+  }
 
   private object Key {
     const val CURRENCY_LIST = "currency_list"
