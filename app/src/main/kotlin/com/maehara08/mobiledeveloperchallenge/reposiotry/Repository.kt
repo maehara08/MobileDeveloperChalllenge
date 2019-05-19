@@ -1,11 +1,11 @@
 package com.maehara08.mobiledeveloperchallenge.reposiotry
 
 import android.app.Application
-import androidx.room.Database
+import com.maehara08.mobiledeveloperchallenge.reposiotry.local.DataBase
 
 interface Repository {
   fun init(
     application: Application,
-    database: Database
+    database: DataBase
   )
 }

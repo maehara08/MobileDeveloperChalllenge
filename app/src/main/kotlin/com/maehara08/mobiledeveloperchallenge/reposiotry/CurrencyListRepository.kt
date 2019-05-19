@@ -2,6 +2,7 @@ package com.maehara08.mobiledeveloperchallenge.reposiotry
 
 import android.app.Application
 import com.maehara08.mobiledeveloperchallenge.BuildConfig
+import com.maehara08.mobiledeveloperchallenge.reposiotry.local.DataBase
 import com.maehara08.mobiledeveloperchallenge.reposiotry.local.model.Currency
 import com.maehara08.mobiledeveloperchallenge.reposiotry.remote.service.CurrencyListService
 import kotlinx.coroutines.CompletableDeferred
@@ -12,8 +13,13 @@ object CurrencyListRepository : Repository {
   private val currencyListService =
     RepositoryConstants.retrofit.create(CurrencyListService::class.java)
 
-  override fun init(application: Application) {
+  private lateinit var database: DataBase
+  override fun init(
+    application: Application,
+    database: DataBase
+  ) {
     this.application = application
+    this.database = database
   }
 
   suspend fun getList(): Deferred<List<Currency>> {
