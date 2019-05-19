@@ -26,9 +26,10 @@ object UpdatedAtPreference : Preference {
 
   fun currencyRate(source: String): Date? {
     val date = Date()
-    val time = sharedPreferences.getLong(Key.CURRENCY_RATE + source, DEFAULT_INT)
+    val key = Key.CURRENCY_RATE + source
+    val time = sharedPreferences.getLong(key, DEFAULT_INT)
     sharedPreferences.edit {
-      putLong(Key.CURRENCY_LIST, date.time)
+      putLong(key, date.time)
     }
     if (time == DEFAULT_INT) {
       return null
