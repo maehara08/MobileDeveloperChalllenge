@@ -1,6 +1,5 @@
 package com.maehara08.mobiledeveloperchallenge.reposiotry.local.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -14,7 +13,7 @@ interface CurrencyDao {
   fun insertCurrencies(currencies: List<Currency>)
 
   @Query("SELECT * FROM currency")
-  fun findAll(): LiveData<List<Currency>>
+  fun findAll(): List<Currency>
 
   @Delete
   fun delete(currency: Currency)
