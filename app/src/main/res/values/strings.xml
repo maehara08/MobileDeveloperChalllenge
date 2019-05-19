@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MobileDeveloperChallenge</string>
+  <string name="app_name">MobileDeveloperChallenge</string>
+  <string name="error_message_network_error">Network error</string>
 </resources>
