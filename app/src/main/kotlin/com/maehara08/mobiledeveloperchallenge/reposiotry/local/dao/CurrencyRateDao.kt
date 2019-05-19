@@ -15,6 +15,9 @@ interface CurrencyRateDao {
   @Query("SELECT * FROM CurrencyRate")
   fun findAll(): List<CurrencyRate>
 
+  @Query("SELECT * FROM CurrencyRate WHERE source = :source")
+  fun findAll(source: String): List<CurrencyRate>
+
   @Delete
   fun delete(currency: CurrencyRate)
 }
