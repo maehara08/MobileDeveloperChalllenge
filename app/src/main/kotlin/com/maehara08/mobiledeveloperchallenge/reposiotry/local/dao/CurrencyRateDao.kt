@@ -10,7 +10,7 @@ import com.maehara08.mobiledeveloperchallenge.reposiotry.local.entity.CurrencyRa
 @Dao
 interface CurrencyRateDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
-  fun insertCurrencies(currencies: List<CurrencyRate>)
+  fun insertCurrencyRates(currencies: List<CurrencyRate>)
 
   @Query("SELECT * FROM CurrencyRate")
   fun findAll(): List<CurrencyRate>
