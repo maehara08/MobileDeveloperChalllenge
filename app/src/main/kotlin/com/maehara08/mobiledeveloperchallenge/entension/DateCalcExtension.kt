@@ -2,15 +2,15 @@ package com.maehara08.mobiledeveloperchallenge.entension
 
 import java.util.Date
 import java.util.concurrent.TimeUnit
-import kotlin.math.absoluteValue
 
 /**
  * 30分以内ならtrue
  */
-fun Date.isWithin30Minutes(date: Date): Boolean {
+fun Date?.isWithin30Minutes(): Boolean {
+  if (this == null) return false
   val dateTime1 = this.time
-  val dateTime2 = date.time
-  val diffTime = (dateTime1 - dateTime2).absoluteValue
+  val dateTime2 = Date().time
+  val diffTime = dateTime2 - dateTime1
   val thirtyMinutesTime = TimeUnit.MINUTES.toMillis(30)
   return diffTime < thirtyMinutesTime
 }
