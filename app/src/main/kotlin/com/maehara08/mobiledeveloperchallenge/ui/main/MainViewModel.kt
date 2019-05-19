@@ -12,6 +12,10 @@ import timber.log.Timber
 class MainViewModel(application: Application) : AndroidViewModel(application) {
   val currencyData = MutableLiveData<List<Currency>>()
 
+  init {
+    getCurrencyList()
+  }
+
   fun getCurrencyList() {
     viewModelScope.launch {
       try {
