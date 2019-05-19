@@ -11,7 +11,7 @@ import com.maehara08.mobiledeveloperchallenge.reposiotry.local.entity.Currency
 @Dao
 interface CurrencyDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
-  fun createCurrency(currencies: List<Currency>)
+  fun insertCurrencies(currencies: List<Currency>)
 
   @Query("SELECT * FROM currency")
   fun findAll(): LiveData<List<Currency>>
